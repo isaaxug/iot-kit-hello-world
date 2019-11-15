@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# # coding: utf-8
+# coding: utf-8
 
 """
     TouchPhat部分の制御を行う。
