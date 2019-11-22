@@ -63,15 +63,16 @@ def change(mode):
 if __name__ == '__main__':
     # コマンドの引数を受け取る
     ap = argparse.ArgumentParser()
+    ap.add_argument('-m', '--mode',required=True)
     ap.add_argument('-p', '--path', default='/tmp/jtalk.wav',
             help='作成する音声ファイルへのパス')
     args = vars(ap.parse_args())
-    if mode == 'Washington'
+    mode = args['mode']
+    if mode == 'Washington':
         jtalk("アメリカの首都は、ニューヨークと思われがちですが、ただしくはワシントンDCです。 アメリカの人口は、約3億2500万人、大統領は、ドナルドトランプです。 日本との時差は13時間なので、ワシントンDCの現在の時刻は[]です。天気は晴れ、気温は[]です。 ", args['path'])
-    if mode == 'London'
+    if mode == 'London':
         jtalk("イギリスの首都は、ロンドンです。 イギリスの人口は約6600万人、首相はボリスジョンソンです。 日本との時差は8時間なので、ロンドンの現在の時刻は[]です。天気は[]、気温は[]です。")
-    if mode == 'New Delhi'
+    if mode == 'New Delhi':
         jtalk("インドの首都は、ニューデリーです。 インドの人口は約、13億4000万人、大統領は、ジラーム・ナート・コーヴィンド、です。 インドの言語は、ヒンディー語を筆頭に、ベンガル語など、方言も含めると、800以上の言語があります。 日本との時差は3時間30分なので、ニューデリーの現在の時刻は、[]です。天気は[]、気温は[]です。 ", args['path'])
-    if mode == 'Brasilia'
+    if mode == 'Brasilia':
         jtalk("ブラジルの首都はリオデジャネイロと思われがちですが、ただしくはブラジリアです。 ブラジルの人口は約2億1400万人、大統領はジャイール・ボルソナーロです。 日本との時差は12時間なので、ブラジリアの現在の時刻は[]です。天気は[]、気温は[]です。", args['path'])
-        return False
