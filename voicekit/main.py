@@ -16,7 +16,7 @@
  """
 
 from logging import getLogger
-logger = getLogger('unicorn_mqtt_display')
+logger = getLogger('mqtt_voice')
 
 from logging import Formatter, StreamHandler, INFO
 import sys

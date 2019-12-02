@@ -11,7 +11,7 @@ import envirophat
 from threading import Thread, Event
 
 # 別途ファイルで定義したMQTTクライアントをインポートする
-from lib.mqtt import client, start
+from mqtt import client, start
 
 # 変更要求をパブリッシュするトピックを作成する
 TARGET_NAME = os.environ.get('MQTT_TARGET_NAME')
@@ -48,12 +48,13 @@ def main():
     # MQTTサブスクライブ
     start()
 
-def start_envirophat(s=60):
+def start_envirophat(event):
     """
         Enviro pHATから環境データを取得し定期的にクラウドに送信
         インターバルはデフォルト60秒
     """
-    while True:
+    s=60
+    while not event.is_set():
         # 後で加工しやすいようにデータはJSON形式にする
         data = {
             'name': 'Enviro pHAT',

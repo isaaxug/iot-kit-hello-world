@@ -37,6 +37,12 @@ def on_connect(sclient, userdata, flags, respons_code):
     client.publish('stat/' + NAME + '/status', 'connected.')
 
     # 接続しましたという読み上げをする
+    if on_connect
+    ap = argparse.ArgumentParser()
+    ap.add_argument('-p', '--path', default='/tmp/jtalk.wav',
+            help='作成する音声ファイルへのパス')
+    args = vars(ap.parse_args())
+        jtalk("接続しました", args['path'])
 
 
 def on_message(client, userdata, msg):
